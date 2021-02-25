@@ -1,8 +1,9 @@
-FROM debian:buster-slim
+FROM navikey/raspbian-buster:latest
 ENV DOMAIN=localhost
 RUN apt-get update && \
     apt-get -y install \
     imagemagick \
+    python3 \
     python3-cryptography \
     python3-dateutil \
     python3-idna \
