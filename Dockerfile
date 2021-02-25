@@ -20,8 +20,10 @@ RUN apt-get update && \
     python3-bandit \
     libimage-exiftool-perl \
     tor
-RUN adduser --system --home=/opt/epicyon --group epicyon
+RUN adduser --system --home=/opt/epicyon --group epicyon 
 COPY --chown=epicyon:epicyon . /app
+RUN mkdir /app/accounts \
+    chown epicyon:epicyon /app/accounts
 EXPOSE 80 7156
 CMD /usr/bin/python3 \
     /app/epicyon.py \
